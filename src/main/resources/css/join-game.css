@@ -1,0 +1,46 @@
+.main {
+    -fx-alignment: center;
+    -fx-pref-width: 1920px;
+    -fx-pref-height: 1080px;
+}
+
+.content {
+    -fx-alignment: center;
+}
+
+.title {
+    -fx-font-family: Arcade;
+    -fx-font-size: 150px;
+}
+
+.subtitle {
+    -fx-font-size: 24px;
+    -fx-font-family: Ticketing;
+    -fx-min-width: 500px;
+}
+
+.input {
+    -fx-font-size: 24px;
+    -fx-font-family: Ticketing;
+    -fx-max-width: 500px;
+}
+
+.role-box {
+    -fx-font-size: 24px;
+    -fx-font-family: Ticketing;
+    -fx-max-width: 500px;
+}
+
+.manage-button-container {
+    -fx-alignment: center;
+    -fx-spacing: 20px;
+}
+
+.button {
+    -fx-font-family: Ticketing;
+    -fx-font-size: 24px;
+    -fx-min-width: 240px;
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+    -fx-focus-traversable: false;
+}

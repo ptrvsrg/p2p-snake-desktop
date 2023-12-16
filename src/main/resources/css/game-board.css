@@ -1,0 +1,76 @@
+.main {
+    -fx-alignment: center;
+    -fx-pref-width: 1920px;
+    -fx-pref-height: 1080px;
+}
+
+.content {
+    -fx-alignment: top-center;
+    -fx-padding: 20px 0 0 0;
+}
+
+.title {
+    -fx-max-height: 100px;
+    -fx-font-size: 100px;
+    -fx-font-family: Arcade;
+}
+
+.game-space {
+    -fx-pref-height: 980px;
+    -fx-alignment: center;
+}
+
+.game-field-container {
+    -fx-alignment: center;
+    -fx-column-halignment: center;
+    -fx-pref-height: 940px;
+    -fx-pref-width: 1280px;
+    -fx-padding: 20px;
+}
+
+.game-field {
+    -fx-alignment: center;
+    -fx-background-color: rgb(0, 0, 0, 0);
+}
+
+.game-info-container {
+    -fx-pref-height: 980px;
+    -fx-pref-width: 640px;
+    -fx-alignment: top-center;
+    -fx-padding: 20px 20px 0 0;
+}
+
+.exit-container {
+    -fx-alignment: center;
+    -fx-spacing: 40px;
+}
+
+.exit-button {
+    -fx-font-family: Ticketing;
+    -fx-font-size: 32px;
+    -fx-text-alignment: center;
+    -fx-focus-traversable: false;
+}
+
+.player-list-container {
+    -fx-alignment: center;
+    -fx-spacing: 10px;
+}
+
+.player-list-title {
+    -fx-font-family: Ticketing;
+    -fx-font-size: 32px;
+}
+
+.scroll {
+    -fx-pref-height: 747.0;
+    -fx-pref-width: 420.0;
+    -fx-fit-to-height: true;
+    -fx-fit-to-width: true;
+    -fx-hbar-policy: never;
+    -fx-background-color: rgb(0, 0, 0, 0);
+}
+
+.viewport {
+    -fx-background-color: rgb(0, 0, 0, 0);
+}

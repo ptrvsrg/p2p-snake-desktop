@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<StackPane xmlns="http://javafx.com/javafx/20.0.1"
+           xmlns:fx="http://javafx.com/fxml/1"
+           stylesheets="@/css/discover-game.css" styleClass="main"
+           fx:controller="ru.nsu.ccfit.network.p2psnake.desktop.controller.DiscoverGameController">
+    <ImageView fitHeight="1080" fitWidth="1920">
+        <Image url="/img/background.jpeg"/>
+    </ImageView>
+    <VBox stylesheets="@/css/discover-game.css" styleClass="content">
+        <Label stylesheets="@/css/discover-game.css" styleClass="title" text="Existing games"/>
+        <HBox stylesheets="@/css/discover-game.css" styleClass="manage-button-container">
+            <VBox.margin>
+                <Insets left="20.0" right="20.0"/>
+            </VBox.margin>
+            <Button stylesheets="@/css/discover-game.css" styleClass="button" onAction="#handleUpdate" text="Update"/>
+            <Button stylesheets="@/css/discover-game.css" styleClass="button" onAction="#handleCancel" text="Cancel"/>
+        </HBox>
+        <ScrollPane stylesheets="@/css/discover-game.css" styleClass="scroll">
+            <VBox fx:id="gameButtonContainer"/>
+        </ScrollPane>
+    </VBox>
+</StackPane>

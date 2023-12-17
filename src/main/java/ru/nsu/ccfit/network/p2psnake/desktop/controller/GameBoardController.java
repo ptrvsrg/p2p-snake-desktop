@@ -51,6 +51,7 @@ public class GameBoardController {
     private int width;
     private int height;
     private String playerName;
+    private PlayerDto player;
     private ScheduledExecutorService stateUpdater;
 
     @FXML
@@ -79,9 +80,14 @@ public class GameBoardController {
                 case D, RIGHT -> apiClient.steerSnake(Direction.RIGHT);
             }
         } catch (ApiErrorException e) {
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(fxWeaver.loadView(MainController.class)));
-            stage.setFullScreen(true);
+            Platform.runLater(() -> {
+                GameOverController gameOverController = fxWeaver.loadController(GameOverController.class);
+                gameOverController.initialize(player == null ? 0 : player.getScore());
+
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(fxWeaver.loadView(GameOverController.class)));
+                stage.setFullScreen(true);
+            });
             apiClient.close();
             stateUpdater.shutdownNow();
         }
@@ -89,16 +95,20 @@ public class GameBoardController {
 
     @FXML
     public void handleExit(ActionEvent event) {
-        stateUpdater.shutdownNow();
-
         try {
             apiClient.exitGame();
         } catch (ApiErrorException e) {
             ErrorPopup.show(e.getMessage());
         }
 
+        stateUpdater.shutdownNow();
+        apiClient.close();
+
+        GameOverController gameOverController = fxWeaver.loadController(GameOverController.class);
+        gameOverController.initialize(player == null ? 0 : player.getScore());
+
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(fxWeaver.loadView(StartMenuController.class)));
+        stage.setScene(new Scene(fxWeaver.loadView(GameOverController.class)));
         stage.setFullScreen(true);
     }
 
@@ -108,8 +118,11 @@ public class GameBoardController {
             gameState = apiClient.getGameState();
         } catch (ApiErrorException e) {
             Platform.runLater(() -> {
+                GameOverController gameOverController = fxWeaver.loadController(GameOverController.class);
+                gameOverController.initialize(player == null ? 0 : player.getScore());
+
                 Stage stage = (Stage) field.getScene().getWindow();
-                stage.setScene(new Scene(fxWeaver.loadView(MainController.class)));
+                stage.setScene(new Scene(fxWeaver.loadView(GameOverController.class)));
                 stage.setFullScreen(true);
             });
             apiClient.close();
@@ -139,7 +152,7 @@ public class GameBoardController {
         // Add snakes
         int currentPlayerId = gameState.getPlayers()
                 .stream()
-                .filter(player -> player.getName().equals(playerName))
+                .filter(player1 -> player1.getName().equals(playerName))
                 .findFirst()
                 .map(PlayerDto::getId)
                 .orElse(-1);
@@ -193,12 +206,16 @@ public class GameBoardController {
                 .stream()
                 .sorted(Comparator.comparingInt(PlayerDto::getId))
                 .toList();
-        for (PlayerDto player : sortedPlayers) {
+        for (PlayerDto player1 : sortedPlayers) {
             Label label = new Label();
             label.setText(String.format("%d) %s (%s) - %d points",
-                    player.getId(), player.getName(), player.getRole().name(), player.getScore()));
+                    player1.getId(), player1.getName(), player1.getRole().name(), player1.getScore()));
             label.setFont(new Font("Ticketing", 28));
             Platform.runLater(() -> playerList.getChildren().add(label));
+
+            if (player1.getId() == currentPlayerId) {
+                player = player1;
+            }
         }
     }
 

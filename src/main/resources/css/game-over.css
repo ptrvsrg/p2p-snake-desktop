@@ -1,0 +1,29 @@
+.main {
+    -fx-alignment: center;
+    -fx-pref-width: 1920px;
+    -fx-pref-height: 1080px;
+}
+
+.content {
+    -fx-alignment: center;
+    -fx-spacing: 20;
+}
+
+.title {
+    -fx-font-size: 200px;
+    -fx-font-family: Arcade;
+}
+
+.subtitle {
+    -fx-font-size: 48px;
+    -fx-font-family: Ticketing;
+}
+
+.button {
+    -fx-font-family: Ticketing;
+    -fx-font-size: 32px;
+    -fx-min-width: 500px;
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+    -fx-focus-traversable: false;
+}

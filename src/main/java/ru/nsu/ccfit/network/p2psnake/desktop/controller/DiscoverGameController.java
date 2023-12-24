@@ -39,6 +39,8 @@ public class DiscoverGameController {
         try {
             gameInfos = apiClient.discoverGame();
         } catch (ApiErrorException e) {
+            apiClient.close();
+
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(fxWeaver.loadView(MainController.class)));
             stage.setFullScreen(true);

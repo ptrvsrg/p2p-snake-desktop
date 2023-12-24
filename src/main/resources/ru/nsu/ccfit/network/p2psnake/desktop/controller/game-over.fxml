@@ -9,18 +9,18 @@
 <?import javafx.geometry.Insets?>
 <StackPane xmlns="http://javafx.com/javafx/20.0.1"
            xmlns:fx="http://javafx.com/fxml/1"
-           styleClass="main" stylesheets="@/css/game-over.css"
+           styleClass="main" stylesheets="/css/game-over.css"
            fx:controller="ru.nsu.ccfit.network.p2psnake.desktop.controller.GameOverController">
     <ImageView fitWidth="1920" fitHeight="1080">
         <Image url="/img/background.jpeg"/>
     </ImageView>
-    <VBox styleClass="content" stylesheets="@/css/game-over.css">
-        <Label styleClass="title" stylesheets="@/css/game-over.css" text="Game over"/>
-        <Label styleClass="subtitle" stylesheets="@/css/game-over.css" fx:id="score">
+    <VBox styleClass="content" stylesheets="/css/game-over.css">
+        <Label styleClass="title" stylesheets="/css/game-over.css" text="Game over"/>
+        <Label styleClass="subtitle" stylesheets="/css/game-over.css" fx:id="score">
             <VBox.margin>
                 <Insets bottom="50.0"/>
             </VBox.margin>
         </Label>
-        <Button stylesheets="@/css/game-over.css" styleClass="button" onAction="#handleReturnMainMenu" text="Return main menu"/>
+        <Button stylesheets="/css/game-over.css" styleClass="button" onAction="#handleReturnMainMenu" text="Return main menu"/>
     </VBox>
 </StackPane>

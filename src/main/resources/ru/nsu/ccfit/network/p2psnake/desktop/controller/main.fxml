@@ -8,16 +8,16 @@
 <?import javafx.scene.layout.VBox?>
 <StackPane xmlns="http://javafx.com/javafx/20.0.1"
            xmlns:fx="http://javafx.com/fxml/1"
-           styleClass="main" stylesheets="@/css/main.css"
+           styleClass="main" stylesheets="/css/main.css"
            fx:controller="ru.nsu.ccfit.network.p2psnake.desktop.controller.MainController">
     <ImageView fitWidth="1920" fitHeight="1080">
         <Image url="/img/background.jpeg"/>
     </ImageView>
-    <VBox styleClass="content" stylesheets="@/css/main.css">
-        <Label styleClass="title" stylesheets="@/css/main.css" text="P2P-snake"/>
-        <Button onAction="#handleFindNodes" styleClass="button" stylesheets="@/css/main.css"
+    <VBox styleClass="content" stylesheets="/css/main.css">
+        <Label styleClass="title" stylesheets="/css/main.css" text="P2P-snake"/>
+        <Button onAction="#handleFindNodes" styleClass="button" stylesheets="/css/main.css"
                 text="Search free nodes"/>
-        <Button onAction="#handleHelp" styleClass="button" stylesheets="@/css/main.css" text="Help"/>
-        <Button onAction="#handleExit" styleClass="button" stylesheets="@/css/main.css" text="Exit"/>
+        <Button onAction="#handleHelp" styleClass="button" stylesheets="/css/main.css" text="Help"/>
+        <Button onAction="#handleExit" styleClass="button" stylesheets="/css/main.css" text="Exit"/>
     </VBox>
 </StackPane>

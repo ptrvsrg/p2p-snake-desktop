@@ -6,79 +6,79 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <StackPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1"
-           stylesheets="@/css/game-config.css" styleClass="main"
+           stylesheets="/css/game-config.css" styleClass="main"
            fx:controller="ru.nsu.ccfit.network.p2psnake.desktop.controller.GameConfigController">
     <ImageView fitHeight="1080" fitWidth="1920">
         <Image url="/img/background.jpeg"/>
     </ImageView>
-    <VBox stylesheets="@/css/game-config.css" styleClass="content">
-        <Label stylesheets="@/css/game-config.css" styleClass="title" text="Setting"/>
-        <Label stylesheets="@/css/game-config.css" styleClass="subtitle" text="Game name">
+    <VBox stylesheets="/css/game-config.css" styleClass="content">
+        <Label stylesheets="/css/game-config.css" styleClass="title" text="Setting"/>
+        <Label stylesheets="/css/game-config.css" styleClass="subtitle" text="Game name">
             <VBox.margin>
                 <Insets bottom="5.0"/>
             </VBox.margin>
         </Label>
-        <TextField stylesheets="@/css/game-config.css" styleClass="input" promptText="For example, my_game" fx:id="gameNameInput">
+        <TextField stylesheets="/css/game-config.css" styleClass="input" promptText="For example, my_game" fx:id="gameNameInput">
             <VBox.margin>
                 <Insets bottom="15.0"/>
             </VBox.margin>
         </TextField>
-        <Label stylesheets="@/css/game-config.css" styleClass="subtitle" text="Width">
+        <Label stylesheets="/css/game-config.css" styleClass="subtitle" text="Width">
             <VBox.margin>
                 <Insets bottom="5.0"/>
             </VBox.margin>
         </Label>
-        <TextField stylesheets="@/css/game-config.css" styleClass="input" promptText="For example, 40" fx:id="widthInput">
+        <TextField stylesheets="/css/game-config.css" styleClass="input" promptText="For example, 40" fx:id="widthInput">
             <VBox.margin>
                 <Insets bottom="15.0"/>
             </VBox.margin>
         </TextField>
-        <Label stylesheets="@/css/game-config.css" styleClass="subtitle" text="Height">
+        <Label stylesheets="/css/game-config.css" styleClass="subtitle" text="Height">
             <VBox.margin>
                 <Insets bottom="5.0"/>
             </VBox.margin>
         </Label>
-        <TextField stylesheets="@/css/game-config.css" styleClass="input" promptText="For example, 30" fx:id="heightInput">
+        <TextField stylesheets="/css/game-config.css" styleClass="input" promptText="For example, 30" fx:id="heightInput">
             <VBox.margin>
                 <Insets bottom="15.0"/>
             </VBox.margin>
         </TextField>
-        <Label stylesheets="@/css/game-config.css" styleClass="subtitle" text="Initial amount of food">
+        <Label stylesheets="/css/game-config.css" styleClass="subtitle" text="Initial amount of food">
             <VBox.margin>
                 <Insets bottom="5.0"/>
             </VBox.margin>
         </Label>
-        <TextField stylesheets="@/css/game-config.css" styleClass="input" promptText="For example, 10" fx:id="foodStaticInput">
+        <TextField stylesheets="/css/game-config.css" styleClass="input" promptText="For example, 10" fx:id="foodStaticInput">
             <VBox.margin>
                 <Insets bottom="15.0"/>
             </VBox.margin>
         </TextField>
-        <Label stylesheets="@/css/game-config.css" styleClass="subtitle" text="State delay">
+        <Label stylesheets="/css/game-config.css" styleClass="subtitle" text="State delay">
             <VBox.margin>
                 <Insets bottom="5.0"/>
             </VBox.margin>
         </Label>
-        <TextField stylesheets="@/css/game-config.css" styleClass="input" promptText="For example, 1000" fx:id="stateDelayInput">
+        <TextField stylesheets="/css/game-config.css" styleClass="input" promptText="For example, 1000" fx:id="stateDelayInput">
             <VBox.margin>
                 <Insets bottom="15.0"/>
             </VBox.margin>
         </TextField>
-        <Label stylesheets="@/css/game-config.css" styleClass="subtitle" text="Player name">
+        <Label stylesheets="/css/game-config.css" styleClass="subtitle" text="Player name">
             <VBox.margin>
                 <Insets bottom="5.0"/>
             </VBox.margin>
         </Label>
-        <TextField stylesheets="@/css/game-config.css" styleClass="input" promptText="For example, player1" fx:id="playerNameInput">
+        <TextField stylesheets="/css/game-config.css" styleClass="input" promptText="For example, player1" fx:id="playerNameInput">
             <VBox.margin>
                 <Insets bottom="15.0"/>
             </VBox.margin>
         </TextField>
-        <HBox stylesheets="@/css/game-config.css" styleClass="manage-button-container">
+        <HBox stylesheets="/css/game-config.css" styleClass="manage-button-container">
             <VBox.margin>
                 <Insets top="20.0"/>
             </VBox.margin>
-            <Button stylesheets="@/css/game-config.css" styleClass="button" text="Create" onAction="#handleCreateGame"/>
-            <Button stylesheets="@/css/game-config.css" styleClass="button" text="Cancel" onAction="#handleCancel"/>
+            <Button stylesheets="/css/game-config.css" styleClass="button" text="Create" onAction="#handleCreateGame"/>
+            <Button stylesheets="/css/game-config.css" styleClass="button" text="Cancel" onAction="#handleCancel"/>
         </HBox>
     </VBox>
 </StackPane>

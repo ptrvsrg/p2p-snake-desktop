@@ -5,28 +5,28 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
-<StackPane stylesheets="@/css/game-board.css" styleClass="main" xmlns="http://javafx.com/javafx/20.0.1"
+<StackPane stylesheets="/css/game-board.css" styleClass="main" xmlns="http://javafx.com/javafx/20.0.1"
            xmlns:fx="http://javafx.com/fxml/1"
            fx:controller="ru.nsu.ccfit.network.p2psnake.desktop.controller.GameBoardController">
     <ImageView fitHeight="1080.0" fitWidth="1920.0">
-        <Image url="@/img/background.jpeg"/>
+        <Image url="/img/background.jpeg"/>
     </ImageView>
-    <VBox stylesheets="@/css/game-board.css" styleClass="content">
-        <Label stylesheets="@/css/game-board.css" styleClass="title" fx:id="title"/>
-        <HBox stylesheets="@/css/game-board.css" styleClass="game-space">
-            <HBox stylesheets="@/css/game-board.css" styleClass="game-field-container">
-                <GridPane stylesheets="@/css/game-board.css" styleClass="game-field" fx:id="field"/>
+    <VBox stylesheets="/css/game-board.css" styleClass="content">
+        <Label stylesheets="/css/game-board.css" styleClass="title" fx:id="title"/>
+        <HBox stylesheets="/css/game-board.css" styleClass="game-space">
+            <HBox stylesheets="/css/game-board.css" styleClass="game-field-container">
+                <GridPane stylesheets="/css/game-board.css" styleClass="game-field" fx:id="field"/>
             </HBox>
-            <VBox stylesheets="@/css/game-board.css" styleClass="game-info-container">
-                <HBox stylesheets="@/css/game-board.css" styleClass="exit-container">
-                    <Button stylesheets="@/css/game-board.css" styleClass="exit-button" text="Exit" onAction="#handleExit"/>
+            <VBox stylesheets="/css/game-board.css" styleClass="game-info-container">
+                <HBox stylesheets="/css/game-board.css" styleClass="exit-container">
+                    <Button stylesheets="/css/game-board.css" styleClass="exit-button" text="Exit" onAction="#handleExit"/>
                 </HBox>
-                <VBox stylesheets="@/css/game-board.css" styleClass="player-list-container">
+                <VBox stylesheets="/css/game-board.css" styleClass="player-list-container">
                     <VBox.margin>
                         <Insets top="30.0"/>
                     </VBox.margin>
-                    <Label stylesheets="@/css/game-board.css" styleClass="player-list-title" text="Player list"/>
-                    <ScrollPane stylesheets="@/css/game-board.css" styleClass="scroll">
+                    <Label stylesheets="/css/game-board.css" styleClass="player-list-title" text="Player list"/>
+                    <ScrollPane stylesheets="/css/game-board.css" styleClass="scroll">
                         <VBox prefHeight="747.0" prefWidth="420.0" fx:id="playerList"/>
                     </ScrollPane>
                 </VBox>

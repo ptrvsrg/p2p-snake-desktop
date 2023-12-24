@@ -8,17 +8,17 @@
 <?import javafx.scene.layout.VBox?>
 <StackPane xmlns="http://javafx.com/javafx/17.0.2-ea"
            xmlns:fx="http://javafx.com/fxml/1"
-           styleClass="main" stylesheets="@/css/start-menu.css"
+           styleClass="main" stylesheets="/css/start-menu.css"
            fx:controller="ru.nsu.ccfit.network.p2psnake.desktop.controller.StartMenuController">
     <ImageView fitHeight="1080" fitWidth="1920">
         <Image url="/img/background.jpeg"/>
     </ImageView>
-    <VBox styleClass="content" stylesheets="@/css/start-menu.css">
-        <Label styleClass="title" stylesheets="@/css/start-menu.css" text="Game"/>
-        <Button onAction="#handleCreateNewGame" styleClass="button" stylesheets="@/css/start-menu.css"
+    <VBox styleClass="content" stylesheets="/css/start-menu.css">
+        <Label styleClass="title" stylesheets="/css/start-menu.css" text="Game"/>
+        <Button onAction="#handleCreateNewGame" styleClass="button" stylesheets="/css/start-menu.css"
                 text="Create new game"/>
-        <Button onAction="#handleJoinExistingGame" styleClass="button" stylesheets="@/css/start-menu.css"
+        <Button onAction="#handleJoinExistingGame" styleClass="button" stylesheets="/css/start-menu.css"
                 text="Join existing game"/>
-        <Button onAction="#handleCancel" styleClass="button" stylesheets="@/css/start-menu.css" text="Cancel"/>
+        <Button onAction="#handleCancel" styleClass="button" stylesheets="/css/start-menu.css" text="Cancel"/>
     </VBox>
 </StackPane>

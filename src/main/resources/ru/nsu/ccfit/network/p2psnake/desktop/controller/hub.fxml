@@ -10,21 +10,21 @@
 <?import javafx.scene.layout.*?>
 <StackPane xmlns="http://javafx.com/javafx/20.0.1"
            xmlns:fx="http://javafx.com/fxml/1"
-           stylesheets="@/css/hub.css" styleClass="main"
+           stylesheets="/css/hub.css" styleClass="main"
            fx:controller="ru.nsu.ccfit.network.p2psnake.desktop.controller.HubController">
     <ImageView fitHeight="1080" fitWidth="1920">
         <Image url="/img/background.jpeg"/>
     </ImageView>
-    <VBox stylesheets="@/css/hub.css" styleClass="content">
-        <Label stylesheets="@/css/hub.css" styleClass="title" text="Free nodes"/>
-        <HBox stylesheets="@/css/hub.css" styleClass="manage-button-container">
+    <VBox stylesheets="/css/hub.css" styleClass="content">
+        <Label stylesheets="/css/hub.css" styleClass="title" text="Free nodes"/>
+        <HBox stylesheets="/css/hub.css" styleClass="manage-button-container">
             <VBox.margin>
                 <Insets left="20.0" right="20.0"/>
             </VBox.margin>
-            <Button stylesheets="@/css/hub.css" styleClass="button" onAction="#handleUpdate" text="Update"/>
-            <Button stylesheets="@/css/hub.css" styleClass="button" onAction="#handleCancel" text="Cancel"/>
+            <Button stylesheets="/css/hub.css" styleClass="button" onAction="#handleUpdate" text="Update"/>
+            <Button stylesheets="/css/hub.css" styleClass="button" onAction="#handleCancel" text="Cancel"/>
         </HBox>
-        <ScrollPane stylesheets="@/css/hub.css" styleClass="scroll">
+        <ScrollPane stylesheets="/css/hub.css" styleClass="scroll">
             <VBox fx:id="apiUrlButtonContainer"/>
         </ScrollPane>
     </VBox>

@@ -15,6 +15,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
 import org.springframework.stereotype.Component;
@@ -32,6 +33,7 @@ import java.util.concurrent.TimeUnit;
 @Component
 @FxmlView("game-board.fxml")
 @RequiredArgsConstructor
+@Slf4j
 public class GameBoardController {
 
     private static final double MAX_FIELD_HEIGHT = 650;
@@ -80,11 +82,12 @@ public class GameBoardController {
                 case D, RIGHT -> apiClient.steerSnake(Direction.RIGHT);
             }
         } catch (ApiErrorException e) {
+            log.error(e.getMessage());
             Platform.runLater(() -> {
                 GameOverController gameOverController = fxWeaver.loadController(GameOverController.class);
                 gameOverController.initialize(player == null ? 0 : player.getScore());
 
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                Stage stage = (Stage) field.getScene().getWindow();
                 stage.setScene(new Scene(fxWeaver.loadView(GameOverController.class)));
                 stage.setFullScreen(true);
             });
@@ -98,6 +101,7 @@ public class GameBoardController {
         try {
             apiClient.exitGame();
         } catch (ApiErrorException e) {
+            log.error(e.getMessage());
             ErrorPopup.show(e.getMessage());
         }
 
@@ -117,6 +121,7 @@ public class GameBoardController {
         try {
             gameState = apiClient.getGameState();
         } catch (ApiErrorException e) {
+            log.error(e.getMessage());
             Platform.runLater(() -> {
                 GameOverController gameOverController = fxWeaver.loadController(GameOverController.class);
                 gameOverController.initialize(player == null ? 0 : player.getScore());

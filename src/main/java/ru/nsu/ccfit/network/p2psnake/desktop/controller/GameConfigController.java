@@ -72,6 +72,8 @@ public class GameConfigController {
         try {
             apiClient.createGame(gameName, width, height, foodStatic, stateDelay, playerName);
         } catch (ApiErrorException e) {
+            apiClient.close();
+
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(fxWeaver.loadView(MainController.class)));
             stage.setFullScreen(true);

@@ -54,6 +54,8 @@ public class JoinGameController {
         try {
             apiClient.joinGame(gameInfoDto.getName(), playerName, role == PlayerDto.Role.NORMAL);
         } catch (ApiErrorException e) {
+            apiClient.close();
+
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(fxWeaver.loadView(MainController.class)));
             stage.setFullScreen(true);

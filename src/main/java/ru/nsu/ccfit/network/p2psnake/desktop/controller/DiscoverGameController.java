@@ -52,7 +52,8 @@ public class DiscoverGameController {
         gameButtonContainer.getChildren().clear();
         for (GameInfoDto gameInfo : gameInfos) {
             Button btn = new Button();
-            btn.setText(String.format("%s, %dx%d", gameInfo.getName(), gameInfo.getWidth(), gameInfo.getHeight()));
+            btn.setText(String.format("%s, %dx%d, %dms",
+                    gameInfo.getName(), gameInfo.getWidth(), gameInfo.getHeight(), gameInfo.getStateDelay()));
             btn.setFont(new Font("Ticketing", 32));
             btn.setPrefWidth(1880);
             btn.setAlignment(Pos.CENTER);
